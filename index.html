@@ -25,7 +25,17 @@
         color: white;
       }
     </style>
-  </head>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0"
+  }
+}
+</script>
+</head>
   <body class="text-stone-800 bg-stone-900">
 
     <header class="bg-stone-800 text-amber-50 py-6 shadow-lg">
@@ -38,16 +48,16 @@
     <!-- Sections Navigation -->
     <nav id="menu-nav" class="sticky top-0 bg-amber-100/95 backdrop-blur-sm z-10 shadow-md">
       <div class="container mx-auto flex justify-center items-center p-2 space-i-2 md:space-i-4 space-i-reverse overflow-x-auto">
-        <a href="#all" class="nav-link font-bold text-stone-700 px-4 py-2 rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
+        <a href="#all" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           الكل
         </a>
-        <a href="#hot-drinks" class="nav-link font-bold text-stone-700 px-4 py-2 rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
+        <a href="#hot-drinks" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           المشروبات الساخنة
         </a>
-        <a href="#cold-drinks" class="nav-link font-bold text-stone-700 px-4 py-2 rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
+        <a href="#cold-drinks" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           المشروبات الباردة
         </a>
-        <a href="#desserts" class="nav-link font-bold text-stone-700 px-4 py-2 rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
+        <a href="#desserts" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           الحلويات
         </a>
       </div>
@@ -110,13 +120,13 @@
                   <!-- Hot Drinks Section -->
                   <section id="hot-drinks">
                     <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">المشروبات الساخنة</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                        <div class="relative flex-shrink-0">
-                          <img src="https://images.unsplash.com/photo-1572442388796-11668a67d5b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="اسبريسو" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                        <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                          <img src="https://images.unsplash.com/photo-1572442388796-11668a67d5b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="اسبريسو" class="w-full h-full object-cover">
                         </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">اسبريسو</h3>
                             <p class="text-xl font-bold text-amber-700">١٠ جنيه</p>
@@ -125,12 +135,12 @@
                         </div>
                       </div>
                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                        <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1517701550927-4e45363e5e46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كابتشينو" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                        <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1517701550927-4e45363e5e46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كابتشينو" class="w-full h-full object-cover">
                            <div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>
                         </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">كابتشينو</h3>
                             <p class="text-xl font-bold text-amber-700">١٥ جنيه</p>
@@ -139,11 +149,11 @@
                         </div>
                       </div>
                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="قهوة أمريكية" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="قهوة أمريكية" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                            <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">قهوة أمريكية</h3>
                             <p class="text-xl font-bold text-amber-700">١٢ جنيه</p>
@@ -152,11 +162,11 @@
                         </div>
                       </div>
                        <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1542990253-a7814de2e2b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="شوكولاتة ساخنة" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1542990253-a7814de2e2b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="شوكولاتة ساخنة" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">شوكولاتة ساخنة</h3>
                             <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
@@ -170,13 +180,13 @@
                   <!-- Cold Drinks Section -->
                   <section id="cold-drinks">
                     <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">المشروبات الباردة</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                        <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1599394022413-03f39284210a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="آيس لاتيه" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1599394022413-03f39284210a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="آيس لاتيه" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">آيس لاتيه</h3>
                             <p class="text-xl font-bold text-amber-700">١٨ جنيه</p>
@@ -185,12 +195,12 @@
                         </div>
                       </div>
                        <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="فرابتشينو كراميل" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="فرابتشينو كراميل" class="w-full h-full object-cover">
                            <div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">فرابتشينو كراميل</h3>
                             <p class="text-xl font-bold text-amber-700">٢٤ جنيه</p>
@@ -199,11 +209,11 @@
                         </div>
                       </div>
                        <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1551538850-ac463ac435f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="موهيتو ليمون ونعناع" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1551538850-ac463ac435f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="موهيتو ليمون ونعناع" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">موهيتو ليمون ونعناع</h3>
                             <p class="text-xl font-bold text-amber-700">٢٠ جنيه</p>
@@ -212,11 +222,11 @@
                         </div>
                       </div>
                        <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1595741003623-1f1f23a6b5a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="شاي مثلج بالخوخ" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1595741003623-1f1f23a6b5a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="شاي مثلج بالخوخ" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                            <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">شاي مثلج بالخوخ</h3>
                             <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
@@ -230,13 +240,13 @@
                   <!-- Desserts Section -->
                   <section id="desserts">
                     <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">الحلويات</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1565021578328-9c601b63c788?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="تشيز كيك بالتوت" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1565021578328-9c601b63c788?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="تشيز كيك بالتوت" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">تشيز كيك بالتوت</h3>
                             <p class="text-xl font-bold text-amber-700">٢٥ جنيه</p>
@@ -245,12 +255,12 @@
                         </div>
                       </div>
                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1631206753348-db28a1a36569?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كيكة العسل الروسية" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1631206753348-db28a1a36569?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كيكة العسل الروسية" class="w-full h-full object-cover">
                            <div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                           <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">كيكة العسل الروسية</h3>
                             <p class="text-xl font-bold text-amber-700">٢٨ جنيه</p>
@@ -259,11 +269,11 @@
                         </div>
                       </div>
                        <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex items-center space-i-4 space-i-reverse p-4">
-                         <div class="relative flex-shrink-0">
-                           <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="براوني الشوكولاتة" class="w-24 h-24 object-cover rounded-md">
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="براوني الشوكولاتة" class="w-full h-full object-cover">
                          </div>
-                        <div class="flex-1">
+                        <div class="flex-1 p-4">
                            <div class="flex justify-between items-center">
                             <h3 class="text-xl font-bold text-stone-800">براوني الشوكولاتة</h3>
                             <p class="text-xl font-bold text-amber-700">٢٢ جنيه</p>
