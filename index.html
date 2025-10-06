@@ -24,6 +24,14 @@
         background-color: #a16207; /* amber-700 */
         color: white;
       }
+      /* Hide scrollbar for cleaner navigation */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
     </style>
   <script type="importmap">
 {
@@ -47,7 +55,7 @@
 
     <!-- Sections Navigation -->
     <nav id="menu-nav" class="sticky top-0 bg-amber-100/95 backdrop-blur-sm z-10 shadow-md">
-      <div class="container mx-auto flex justify-center items-center p-2 space-i-2 md:space-i-4 space-i-reverse overflow-x-auto">
+      <div class="container mx-auto flex justify-start sm:justify-center items-center p-2 space-i-2 md:space-i-4 space-i-reverse overflow-x-auto hide-scrollbar">
         <a href="#all" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           الكل
         </a>
@@ -56,6 +64,9 @@
         </a>
         <a href="#cold-drinks" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           المشروبات الباردة
+        </a>
+        <a href="#pastries" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
+          المعجنات
         </a>
         <a href="#desserts" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           الحلويات
@@ -232,6 +243,39 @@
                             <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
                           </div>
                           <p class="text-stone-600 mt-1">شاي أسود بارد بنكهة الخوخ الحلو.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- Pastries Section -->
+                  <section id="pastries">
+                    <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">المعجنات</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                      <!-- Product Card -->
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1509451083492-629a8a735f14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كرواسون بالزبدة" class="w-full h-full object-cover">
+                         </div>
+                        <div class="flex-1 p-4">
+                          <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-stone-800">كرواسون بالزبدة</h3>
+                            <p class="text-xl font-bold text-amber-700">١٤ جنيه</p>
+                          </div>
+                          <p class="text-stone-600 mt-1">كرواسون فرنسي هش وطري محضر من الزبدة الفاخرة.</p>
+                        </div>
+                      </div>
+                      <!-- Product Card -->
+                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
+                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                           <img src="https://images.unsplash.com/photo-1620921282638-c34dd636c7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="بان او شوكولا" class="w-full h-full object-cover">
+                         </div>
+                        <div class="flex-1 p-4">
+                          <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-bold text-stone-800">بان او شوكولا</h3>
+                            <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
+                          </div>
+                          <p class="text-stone-600 mt-1">عجينة الكرواسون الهشة محشوة بقطع الشوكولاتة الداكنة.</p>
                         </div>
                       </div>
                     </div>
