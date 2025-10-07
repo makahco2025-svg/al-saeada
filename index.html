@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>كافية السعادة</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,6 +32,9 @@
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
       }
+      .admin-modal {
+        transition: opacity 0.3s ease-in-out;
+      }
     </style>
   <script type="importmap">
 {
@@ -55,22 +58,11 @@
 
     <!-- Sections Navigation -->
     <nav id="menu-nav" class="sticky top-0 bg-amber-100/95 backdrop-blur-sm z-10 shadow-md">
-      <div class="container mx-auto flex justify-start sm:justify-center items-center p-2 space-i-2 md:space-i-4 space-i-reverse overflow-x-auto hide-scrollbar">
+      <div id="nav-links-container" class="container mx-auto flex justify-start sm:justify-center items-center p-2 space-i-2 md:space-i-4 space-i-reverse overflow-x-auto hide-scrollbar">
         <a href="#all" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
           الكل
         </a>
-        <a href="#hot-drinks" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
-          المشروبات الساخنة
-        </a>
-        <a href="#cold-drinks" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
-          المشروبات الباردة
-        </a>
-        <a href="#pastries" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
-          المعجنات
-        </a>
-        <a href="#desserts" class="nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0">
-          الحلويات
-        </a>
+        <!-- Dynamic links will be injected here -->
       </div>
     </nav>
     
@@ -127,210 +119,83 @@
 
             <!-- Menu Sections -->
             <div class="p-6 md:p-10">
-                <div class="space-y-12">
-                  <!-- Hot Drinks Section -->
-                  <section id="hot-drinks">
-                    <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">المشروبات الساخنة</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                        <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                          <img src="https://images.unsplash.com/photo-1572442388796-11668a67d5b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="اسبريسو" class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">اسبريسو</h3>
-                            <p class="text-xl font-bold text-amber-700">١٠ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">جرعة قوية ومركزة من القهوة النقية.</p>
-                        </div>
-                      </div>
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                        <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1517701550927-4e45363e5e46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كابتشينو" class="w-full h-full object-cover">
-                           <div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>
-                        </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">كابتشينو</h3>
-                            <p class="text-xl font-bold text-amber-700">١٥ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">اسبريسو مع حليب مبخر ورغوة حليب غنية.</p>
-                        </div>
-                      </div>
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="قهوة أمريكية" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                           <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">قهوة أمريكية</h3>
-                            <p class="text-xl font-bold text-amber-700">١٢ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">اسبريسو مخفف بالماء الساخن.</p>
-                        </div>
-                      </div>
-                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1542990253-a7814de2e2b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="شوكولاتة ساخنة" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">شوكولاتة ساخنة</h3>
-                            <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">شوكولاتة فاخرة مذابة في الحليب الدافئ.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- Cold Drinks Section -->
-                  <section id="cold-drinks">
-                    <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">المشروبات الباردة</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1599394022413-03f39284210a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="آيس لاتيه" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">آيس لاتيه</h3>
-                            <p class="text-xl font-bold text-amber-700">١٨ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">اسبريسو وحليب بارد مقدم مع الثلج.</p>
-                        </div>
-                      </div>
-                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="فرابتشينو كراميل" class="w-full h-full object-cover">
-                           <div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">فرابتشينو كراميل</h3>
-                            <p class="text-xl font-bold text-amber-700">٢٤ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">مزيج مثلج من القهوة، الحليب، والكراميل.</p>
-                        </div>
-                      </div>
-                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1551538850-ac463ac435f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="موهيتو ليمون ونعناع" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">موهيتو ليمون ونعناع</h3>
-                            <p class="text-xl font-bold text-amber-700">٢٠ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">انتعاش الليمون والنعناع في مشروب صيفي مثالي.</p>
-                        </div>
-                      </div>
-                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1595741003623-1f1f23a6b5a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="شاي مثلج بالخوخ" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                           <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">شاي مثلج بالخوخ</h3>
-                            <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">شاي أسود بارد بنكهة الخوخ الحلو.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- Pastries Section -->
-                  <section id="pastries">
-                    <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">المعجنات</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1509451083492-629a8a735f14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كرواسون بالزبدة" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">كرواسون بالزبدة</h3>
-                            <p class="text-xl font-bold text-amber-700">١٤ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">كرواسون فرنسي هش وطري محضر من الزبدة الفاخرة.</p>
-                        </div>
-                      </div>
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1620921282638-c34dd636c7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="بان او شوكولا" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">بان او شوكولا</h3>
-                            <p class="text-xl font-bold text-amber-700">١٦ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">عجينة الكرواسون الهشة محشوة بقطع الشوكولاتة الداكنة.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  <!-- Desserts Section -->
-                  <section id="desserts">
-                    <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">الحلويات</h2>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1565021578328-9c601b63c788?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="تشيز كيك بالتوت" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">تشيز كيك بالتوت</h3>
-                            <p class="text-xl font-bold text-amber-700">٢٥ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">طبقة غنية من الجبن الكريمي مع صلصة التوت المنعشة.</p>
-                        </div>
-                      </div>
-                      <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1631206753348-db28a1a36569?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="كيكة العسل الروسية" class="w-full h-full object-cover">
-                           <div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>
-                         </div>
-                        <div class="flex-1 p-4">
-                          <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">كيكة العسل الروسية</h3>
-                            <p class="text-xl font-bold text-amber-700">٢٨ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">طبقات رقيقة من الكيك بالعسل مع كريمة الزبدة.</p>
-                        </div>
-                      </div>
-                       <!-- Product Card -->
-                      <div class="bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row sm:items-center">
-                         <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
-                           <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80" alt="براوني الشوكولاتة" class="w-full h-full object-cover">
-                         </div>
-                        <div class="flex-1 p-4">
-                           <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-bold text-stone-800">براوني الشوكولاتة</h3>
-                            <p class="text-xl font-bold text-amber-700">٢٢ جنيه</p>
-                          </div>
-                          <p class="text-stone-600 mt-1">براوني غني بالشوكولاتة يقدم دافئاً مع آيس كريم الفانيليا.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+                <div id="menu-sections-container" class="space-y-12">
+                  <!-- Dynamic sections will be injected here -->
                 </div>
             </div>
 
         </div>
+    </div>
+    
+    <!-- Admin Panel -->
+    <div id="admin-panel-container" class="fixed inset-0 bg-stone-900/95 backdrop-blur-sm z-40 hidden p-4 sm:p-8 text-white overflow-y-auto">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl font-bold text-amber-100">لوحة تحكم المنيو</h2>
+          <div>
+            <button id="add-new-item-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors ml-4">إضافة منتج جديد</button>
+            <button id="admin-logout-btn" class="bg-stone-700 hover:bg-stone-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">الخروج</button>
+          </div>
+        </div>
+        
+        <!-- Category Management -->
+        <div class="mb-8 p-4 bg-stone-800 rounded-lg">
+          <h3 class="text-xl font-bold text-amber-200 mb-3">إدارة الأقسام</h3>
+          <div id="admin-categories-list" class="space-y-2 mb-4">
+            <!-- Dynamic categories list here -->
+          </div>
+          <form id="add-category-form" class="flex gap-2">
+            <input type="text" id="new-category-name" placeholder="اسم القسم الجديد" class="flex-grow bg-stone-700 border border-stone-600 rounded-md px-3 py-2 focus:ring-amber-500 focus:border-amber-500 text-white" required>
+            <button type="submit" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-md transition-colors flex-shrink-0">إضافة قسم</button>
+          </form>
+        </div>
+
+        <div id="admin-items-list" class="space-y-6">
+          <!-- Admin items will be injected by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Edit/Add Modal -->
+    <div id="admin-edit-modal" class="admin-modal fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
+      <div class="bg-white rounded-lg shadow-xl w-full max-w-lg max-h-[90vh] flex flex-col text-stone-800">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h3 id="admin-modal-title" class="text-2xl font-bold">إضافة/تعديل منتج</h3>
+            <button id="admin-modal-close" class="text-stone-500 hover:text-stone-800 text-3xl leading-none">&times;</button>
+        </div>
+        <form id="admin-edit-form" class="p-6 space-y-4 overflow-y-auto">
+          <input type="hidden" id="edit-item-id">
+          <div>
+            <label for="edit-item-name" class="block text-sm font-bold text-stone-600 mb-1">اسم المنتج</label>
+            <input type="text" id="edit-item-name" class="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-amber-500 focus:border-amber-500" required>
+          </div>
+          <div>
+            <label for="edit-item-price" class="block text-sm font-bold text-stone-600 mb-1">السعر (بالجنيه)</label>
+            <input type="number" id="edit-item-price" class="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-amber-500 focus:border-amber-500" required>
+          </div>
+          <div>
+            <label for="edit-item-description" class="block text-sm font-bold text-stone-600 mb-1">الوصف</label>
+            <textarea id="edit-item-description" rows="3" class="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-amber-500 focus:border-amber-500" required></textarea>
+          </div>
+           <div>
+            <label for="edit-item-image" class="block text-sm font-bold text-stone-600 mb-1">رابط الصورة</label>
+            <input type="url" id="edit-item-image" class="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-amber-500 focus:border-amber-500" required>
+          </div>
+          <div>
+            <label for="edit-item-category" class="block text-sm font-bold text-stone-600 mb-1">القسم</label>
+            <select id="edit-item-category" class="w-full border border-stone-300 rounded-lg px-3 py-2 focus:ring-amber-500 focus:border-amber-500" required>
+              <!-- Dynamic options here -->
+            </select>
+          </div>
+           <div class="flex items-center">
+            <input type="checkbox" id="edit-item-featured" class="h-4 w-4 text-amber-600 border-stone-300 rounded focus:ring-amber-500">
+            <label for="edit-item-featured" class="ml-2 block text-sm text-stone-900">مميز؟</label>
+          </div>
+        </form>
+        <div class="p-4 bg-stone-50 border-t mt-auto">
+            <button id="admin-modal-save" class="w-full bg-amber-600 text-white font-bold py-3 rounded-lg hover:bg-amber-700 transition-colors">حفظ التغييرات</button>
+        </div>
+      </div>
     </div>
 
 
@@ -347,11 +212,115 @@
             <span>حدائق اكتوبر منطقة 390 فدان الممشى السياحى</span>
           </a>
         </div>
+        <p class="mt-2"><a href="#" id="admin-login-link" class="text-xs text-stone-500 hover:text-white transition-colors">Admin Login</a></p>
       </div>
     </footer>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // --- INITIAL DATA (FALLBACK) ---
+        const initialMenuData = [
+            { id: 1, name: "اسبريسو", price: 10, description: "جرعة قوية ومركزة من القهوة النقية.", category: "hot-drinks", imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67d5b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 2, name: "كابتشينو", price: 15, description: "اسبريسو مع حليب مبخر ورغوة حليب غنية.", category: "hot-drinks", imageUrl: "https://images.unsplash.com/photo-1517701550927-4e45363e5e46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: true },
+            { id: 3, name: "قهوة أمريكية", price: 12, description: "اسبريسو مخفف بالماء الساخن.", category: "hot-drinks", imageUrl: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 4, name: "شوكولاتة ساخنة", price: 16, description: "شوكولاتة فاخرة مذابة في الحليب الدافئ.", category: "hot-drinks", imageUrl: "https://images.unsplash.com/photo-1542990253-a7814de2e2b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 5, name: "آيس لاتيه", price: 18, description: "اسبريسو وحليب بارد مقدم مع الثلج.", category: "cold-drinks", imageUrl: "https://images.unsplash.com/photo-1599394022413-03f39284210a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 6, name: "فرابتشينو كراميل", price: 24, description: "مزيج مثلج من القهوة، الحليب، والكراميل.", category: "cold-drinks", imageUrl: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: true },
+            { id: 7, name: "موهيتو ليمون ونعناع", price: 20, description: "انتعاش الليمون والنعناع في مشروب صيفي مثالي.", category: "cold-drinks", imageUrl: "https://images.unsplash.com/photo-1551538850-ac463ac435f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 8, name: "شاي مثلج بالخوخ", price: 16, description: "شاي أسود بارد بنكهة الخوخ الحلو.", category: "cold-drinks", imageUrl: "https://images.unsplash.com/photo-1595741003623-1f1f23a6b5a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 9, name: "كرواسون بالزبدة", price: 14, description: "كرواسون فرنسي هش وطري محضر من الزبدة الفاخرة.", category: "pastries", imageUrl: "https://images.unsplash.com/photo-1509451083492-629a8a735f14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 10, name: "بان او شوكولا", price: 16, description: "عجينة الكرواسون الهشة محشوة بقطع الشوكولاتة الداكنة.", category: "pastries", imageUrl: "https://images.unsplash.com/photo-1620921282638-c34dd636c7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 11, name: "تشيز كيك بالتوت", price: 25, description: "طبقة غنية من الجبن الكريمي مع صلصة التوت المنعشة.", category: "desserts", imageUrl: "https://images.unsplash.com/photo-1565021578328-9c601b63c788?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false },
+            { id: 12, name: "كيكة العسل الروسية", price: 28, description: "طبقات رقيقة من الكيك بالعسل مع كريمة الزبدة.", category: "desserts", imageUrl: "https://images.unsplash.com/photo-1631206753348-db28a1a36569?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: true },
+            { id: 13, name: "براوني الشوكولاتة", price: 22, description: "براوني غني بالشوكولاتة يقدم دافئاً مع آيس كريم الفانيليا.", category: "desserts", imageUrl: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=80", featured: false }
+        ];
+        
+        const initialCategoriesData = [
+          { id: 'hot-drinks', name: 'المشروبات الساخنة' },
+          { id: 'cold-drinks', name: 'المشروبات الباردة' },
+          { id: 'pastries', name: 'المعجنات' },
+          { id: 'desserts', name: 'الحلويات' }
+        ];
+
+        // --- GLOBAL STATE ---
+        let menuData = [];
+        let categoriesData = [];
+
+        // --- DATA MANAGEMENT ---
+        const loadData = () => {
+          const savedMenu = localStorage.getItem('cafeMenuData');
+          menuData = savedMenu ? JSON.parse(savedMenu) : initialMenuData;
+          const savedCategories = localStorage.getItem('cafeCategoriesData');
+          categoriesData = savedCategories ? JSON.parse(savedCategories) : initialCategoriesData;
+        };
+
+        const saveData = () => {
+          localStorage.setItem('cafeMenuData', JSON.stringify(menuData));
+          localStorage.setItem('cafeCategoriesData', JSON.stringify(categoriesData));
+        };
+
+        // --- DYNAMIC RENDERING ---
+        const renderNavigationAndSections = () => {
+          const navContainer = document.getElementById('nav-links-container');
+          const sectionsContainer = document.getElementById('menu-sections-container');
+          
+          // Clear existing dynamic content
+          navContainer.querySelectorAll('.dynamic-link').forEach(el => el.remove());
+          sectionsContainer.innerHTML = '';
+          
+          categoriesData.forEach(cat => {
+            // Create nav link
+            const link = document.createElement('a');
+            link.href = `#${cat.id}`;
+            link.className = 'nav-link font-bold text-stone-700 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full hover:bg-amber-200 transition-colors flex-shrink-0 dynamic-link';
+            link.textContent = cat.name;
+            navContainer.appendChild(link);
+            
+            // Create section
+            const section = document.createElement('section');
+            section.id = cat.id;
+            section.innerHTML = `
+              <h2 class="text-3xl font-bold text-stone-700 border-b-2 border-amber-400 pb-2 mb-8">${cat.name}</h2>
+              <div id="${cat.id}-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                <!-- Items will be injected here -->
+              </div>
+            `;
+            sectionsContainer.appendChild(section);
+          });
+          
+          addNavEventListeners();
+        };
+
+        const renderMainMenu = () => {
+          categoriesData.forEach(cat => {
+            const grid = document.getElementById(`${cat.id}-grid`);
+            if (!grid) return;
+            grid.innerHTML = ''; // Clear grid before rendering
+            
+            const itemsInCategory = menuData.filter(item => item.category === cat.id);
+            itemsInCategory.forEach(item => {
+              const card = document.createElement('div');
+              card.className = 'product-card bg-white/60 rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row';
+              card.innerHTML = `
+                <div class="relative flex-shrink-0 w-full sm:w-24 h-40 sm:h-24">
+                  <img src="${item.imageUrl}" alt="${item.name}" class="w-full h-full object-cover">
+                  ${item.featured ? `<div class="absolute top-0 left-0 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded-br-lg">مميز</div>` : ''}
+                </div>
+                <div class="flex-1 p-4 flex flex-col justify-between">
+                  <div>
+                    <div class="flex justify-between items-start">
+                      <h3 class="text-xl font-bold text-stone-800">${item.name}</h3>
+                      <p class="text-xl font-bold text-amber-700 whitespace-nowrap">${item.price} جنيه</p>
+                    </div>
+                    <p class="text-stone-600 mt-1">${item.description}</p>
+                  </div>
+                </div>
+              `;
+              grid.appendChild(card);
+            });
+          });
+        };
+        
         // --- Slideshow Logic ---
         const slides = document.querySelectorAll('#slideshow .slide');
         const dots = document.querySelectorAll('#slideshow .dot');
@@ -399,29 +368,19 @@
             startSlideshow();
         }
 
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetSlideshow();
-        });
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetSlideshow();
-        });
+        nextBtn.addEventListener('click', () => { nextSlide(); resetSlideshow(); });
+        prevBtn.addEventListener('click', () => { prevSlide(); resetSlideshow(); });
         dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-              showSlide(index);
-              resetSlideshow();
-          });
+          dot.addEventListener('click', () => { showSlide(index); resetSlideshow(); });
         });
 
         startSlideshow();
 
         // --- Section Toggling Logic ---
-        const navLinks = document.querySelectorAll('#menu-nav a.nav-link');
-        const sections = document.querySelectorAll('section[id]');
-
         function filterSections(sectionIdToShow) {
-          // Update active link styling
+          const navLinks = document.querySelectorAll('#menu-nav a.nav-link');
+          const sections = document.querySelectorAll('#menu-sections-container section');
+          
           navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${sectionIdToShow}`) {
@@ -429,36 +388,253 @@
             }
           });
           
-          // Show/hide sections based on the filter
           if (sectionIdToShow === 'all') {
-            sections.forEach(section => {
-              section.style.display = 'block';
-            });
+            sections.forEach(section => section.style.display = 'block');
           } else {
             sections.forEach(section => {
-              if (section.id === sectionIdToShow) {
-                section.style.display = 'block';
-              } else {
-                section.style.display = 'none';
-              }
+              section.style.display = (section.id === sectionIdToShow) ? 'block' : 'none';
             });
           }
         }
-
-        // Add click listeners to navigation links
-        navLinks.forEach(link => {
-          link.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default anchor jump
-            const sectionId = link.getAttribute('href').substring(1); // Get id from href
-            filterSections(sectionId);
-          });
-        });
-
-        // Show all sections by default when the page loads
-        filterSections('all');
+        
+        function addNavEventListeners() {
+            const navLinks = document.querySelectorAll('#menu-nav a.nav-link');
+            navLinks.forEach(link => {
+              link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const sectionId = link.getAttribute('href').substring(1);
+                filterSections(sectionId);
+              });
+            });
+        }
 
         // --- Footer Year Logic ---
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- ADMIN PANEL LOGIC ---
+        const adminPanel = document.getElementById('admin-panel-container');
+        const adminEditModal = document.getElementById('admin-edit-modal');
+        const adminForm = document.getElementById('admin-edit-form');
+        
+        const renderAdminList = () => {
+          const container = document.getElementById('admin-items-list');
+          container.innerHTML = '';
+          
+          categoriesData.forEach(cat => {
+            const itemsInCategory = menuData.filter(item => item.category === cat.id);
+            if (itemsInCategory.length === 0) return;
+
+            const categorySection = document.createElement('div');
+            categorySection.innerHTML = `<h3 class="text-2xl font-bold text-amber-300 border-b-2 border-amber-400/50 pb-2 mb-4">${cat.name}</h3>`;
+            
+            const itemsContainer = document.createElement('div');
+            itemsContainer.className = 'space-y-3';
+
+            itemsInCategory.forEach(item => {
+              const itemEl = document.createElement('div');
+              itemEl.className = 'bg-stone-800 rounded-lg p-3 flex justify-between items-center';
+              itemEl.innerHTML = `
+                <div class="flex items-center">
+                  <img src="${item.imageUrl}" class="w-12 h-12 object-cover rounded-md ml-4">
+                  <div>
+                    <p class="font-bold">${item.name}</p>
+                    <p class="text-sm text-stone-400">${item.price} جنيه</p>
+                  </div>
+                </div>
+                <div>
+                  <button class="admin-edit-btn bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-1 px-3 rounded-md transition-colors ml-2" data-id="${item.id}">تعديل</button>
+                  <button class="admin-delete-btn bg-red-600 hover:bg-red-700 text-white text-sm font-bold py-1 px-3 rounded-md transition-colors" data-id="${item.id}">حذف</button>
+                </div>
+              `;
+              itemsContainer.appendChild(itemEl);
+            });
+            categorySection.appendChild(itemsContainer);
+            container.appendChild(categorySection);
+          });
+        };
+        
+        const renderAdminCategories = () => {
+          const container = document.getElementById('admin-categories-list');
+          container.innerHTML = '';
+          categoriesData.forEach(cat => {
+            const catEl = document.createElement('div');
+            catEl.className = 'bg-stone-700 rounded-md p-2 flex justify-between items-center';
+            catEl.innerHTML = `
+              <span class="font-semibold">${cat.name}</span>
+              <div>
+                <button class="edit-category-btn bg-blue-800 hover:bg-blue-700 text-white text-xs font-bold py-1 px-2 rounded-md ml-2" data-id="${cat.id}" data-name="${cat.name}">تعديل</button>
+                <button class="delete-category-btn bg-red-800 hover:bg-red-700 text-white text-xs font-bold py-1 px-2 rounded-md" data-id="${cat.id}">&times; حذف</button>
+              </div>
+            `;
+            container.appendChild(catEl);
+          });
+        };
+
+        const populateCategoryDropdown = () => {
+          const select = document.getElementById('edit-item-category');
+          select.innerHTML = categoriesData.map(cat => `<option value="${cat.id}">${cat.name}</option>`).join('');
+        };
+        
+        const openEditModal = (item) => {
+          const title = document.getElementById('admin-modal-title');
+          populateCategoryDropdown();
+          if (item) {
+            title.textContent = 'تعديل منتج';
+            document.getElementById('edit-item-id').value = item.id;
+            document.getElementById('edit-item-name').value = item.name;
+            document.getElementById('edit-item-price').value = item.price;
+            document.getElementById('edit-item-description').value = item.description;
+            document.getElementById('edit-item-image').value = item.imageUrl;
+            document.getElementById('edit-item-category').value = item.category;
+            document.getElementById('edit-item-featured').checked = item.featured;
+          } else {
+            title.textContent = 'إضافة منتج جديد';
+            adminForm.reset();
+            document.getElementById('edit-item-id').value = '';
+          }
+          adminEditModal.classList.remove('hidden');
+          adminEditModal.classList.add('flex');
+        };
+
+        const closeEditModal = () => {
+          adminEditModal.classList.add('hidden');
+          adminEditModal.classList.remove('flex');
+        };
+
+        document.getElementById('admin-login-link').addEventListener('click', (e) => {
+          e.preventDefault();
+          const password = prompt('الرجاء إدخال كلمة مرور المدير:');
+          if (password === 'admin123') { // Simple password check
+            adminPanel.classList.remove('hidden');
+          } else if (password) {
+            alert('كلمة مرور غير صحيحة!');
+          }
+        });
+
+        document.getElementById('admin-logout-btn').addEventListener('click', () => {
+          adminPanel.classList.add('hidden');
+        });
+        
+        document.getElementById('add-new-item-btn').addEventListener('click', () => openEditModal(null));
+        document.getElementById('admin-modal-close').addEventListener('click', closeEditModal);
+        
+        document.getElementById('admin-items-list').addEventListener('click', (e) => {
+          const editBtn = e.target.closest('.admin-edit-btn');
+          const deleteBtn = e.target.closest('.admin-delete-btn');
+          if (editBtn) {
+            const itemId = parseInt(editBtn.dataset.id, 10);
+            const item = menuData.find(i => i.id === itemId);
+            openEditModal(item);
+          }
+          if (deleteBtn) {
+            if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
+              const itemId = parseInt(deleteBtn.dataset.id, 10);
+              menuData = menuData.filter(i => i.id !== itemId);
+              saveData();
+              renderMainMenu();
+              renderAdminList();
+            }
+          }
+        });
+
+        document.getElementById('admin-modal-save').addEventListener('click', () => {
+          const id = document.getElementById('edit-item-id').value;
+          const name = document.getElementById('edit-item-name').value;
+          const price = parseFloat(document.getElementById('edit-item-price').value);
+          if (!name || isNaN(price) || price <= 0) {
+            alert('الرجاء إدخال اسم وسعر صحيحين.');
+            return;
+          }
+
+          const newItemData = {
+            id: id ? parseInt(id, 10) : Date.now(),
+            name,
+            price,
+            description: document.getElementById('edit-item-description').value,
+            imageUrl: document.getElementById('edit-item-image').value,
+            category: document.getElementById('edit-item-category').value,
+            featured: document.getElementById('edit-item-featured').checked,
+          };
+
+          if (id) { // Editing existing
+            const index = menuData.findIndex(i => i.id === newItemData.id);
+            menuData[index] = newItemData;
+          } else { // Adding new
+            menuData.push(newItemData);
+          }
+
+          saveData();
+          renderMainMenu();
+          renderAdminList();
+          closeEditModal();
+        });
+
+        // Category Management Event Listeners
+        document.getElementById('add-category-form').addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = document.getElementById('new-category-name');
+          const newName = nameInput.value.trim();
+          if (!newName) return;
+          
+          const newId = newName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+          if (categoriesData.some(cat => cat.id === newId)) {
+            alert('هذا القسم موجود بالفعل.');
+            return;
+          }
+
+          categoriesData.push({ id: newId, name: newName });
+          saveData();
+          reRenderAll();
+          nameInput.value = '';
+        });
+
+        document.getElementById('admin-categories-list').addEventListener('click', (e) => {
+          const deleteBtn = e.target.closest('.delete-category-btn');
+          const editBtn = e.target.closest('.edit-category-btn');
+
+          if (editBtn) {
+            const catId = editBtn.dataset.id;
+            const currentName = editBtn.dataset.name;
+            const newName = prompt('أدخل الاسم الجديد للقسم:', currentName);
+
+            if (newName && newName.trim() && newName.trim() !== currentName) {
+              const category = categoriesData.find(cat => cat.id === catId);
+              if (category) {
+                category.name = newName.trim();
+                saveData();
+                reRenderAll();
+              }
+            }
+          }
+
+          if (deleteBtn) {
+            const catId = deleteBtn.dataset.id;
+            const itemsCount = menuData.filter(item => item.category === catId).length;
+            
+            if (confirm(`هل أنت متأكد من حذف هذا القسم؟ سيتم حذف ${itemsCount} منتجًا مرتبطًا به.`)) {
+              categoriesData = categoriesData.filter(cat => cat.id !== catId);
+              menuData = menuData.filter(item => item.category !== catId);
+              saveData();
+              reRenderAll();
+            }
+          }
+        });
+        
+        // --- APP INITIALIZATION ---
+        const reRenderAll = () => {
+          renderNavigationAndSections();
+          renderMainMenu();
+          renderAdminCategories();
+          renderAdminList();
+          filterSections('all');
+        }
+
+        const initApp = () => {
+          loadData();
+          reRenderAll();
+        };
+        
+        initApp();
       });
     </script>
 
