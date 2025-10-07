@@ -198,6 +198,23 @@
       </div>
     </div>
 
+    <!-- Product Detail Modal -->
+    <div id="product-detail-modal" class="admin-modal fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
+      <div class="bg-amber-50 rounded-lg shadow-xl w-full max-w-md max-h-[90vh] flex flex-col text-stone-800 relative">
+        <button id="product-modal-close" aria-label="Close" class="absolute top-2 right-2 text-stone-500 hover:text-stone-800 text-4xl leading-none">&times;</button>
+        <div class="overflow-y-auto">
+            <img id="product-modal-image" src="" alt="Product Image" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 id="product-modal-name" class="text-3xl font-bold text-stone-800">Product Name</h3>
+                    <p id="product-modal-price" class="text-2xl font-bold text-amber-700">Price</p>
+                </div>
+                <p id="product-modal-description" class="text-stone-600 mt-4">Product description goes here.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+
 
     <footer class="bg-stone-800 text-amber-200 py-6">
       <div class="container mx-auto text-center text-sm">
